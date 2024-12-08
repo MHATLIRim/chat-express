@@ -1,0 +1,11 @@
+{% extends 'layout.twig' %}  
+
+{% block body %}  
+<script src="/socket.io/socket.io.js"></script>  
+<script>  
+    var socket = io();  
+    socket.on("msg", (data) => {  
+        document.body.append("<p>" + data + "</p>");  
+    });  
+</script>  
+{% endblock %}
